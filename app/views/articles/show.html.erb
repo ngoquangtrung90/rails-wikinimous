@@ -1,0 +1,10 @@
+<h1><%= @article.title %></h1>
+<h2>Article Content</h2>
+<p>
+  <% @article.content.split('#').each do |line| %>
+    <p><%= line %></p>
+  <% end %>
+</p>
+<%= link_to 'Edit this article', edit_path %> |
+<%= link_to 'Back to list article', articles_path %> |
+<%= link_to 'Delete this article', article_path(@article), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
